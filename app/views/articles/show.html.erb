@@ -8,6 +8,13 @@
   <%= @article.text %>
 </p>
 
+<!--<p>-->
+<!--  <strong>comments texts</strong>-->
+  <%# @article.comments.each do |comment| %>
+    <%#= comment.body %>
+  <%# end %>
+<!--</p>-->
+
 <h2>Comments</h2>
 <%#= render @article.comments %>
 <%= render 'comments/comment' %>

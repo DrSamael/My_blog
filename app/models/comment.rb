@@ -1,4 +1,5 @@
 class Comment < ApplicationRecord
+
   belongs_to :article
 
   validates :commenter, presence: true, confirmation: { case_sensitive: false }, length: { minimum: 3 }
