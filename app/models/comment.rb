@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
   after_destroy :log_destroy_action
 
   def log_destroy_action
-    puts 'Comment destroyed!!!!!!!!!!!!!!'
+    puts 'Comment destroyed!!!!!!!!!!!!!!!'
   end
 
   # VALID_STATUSES = ['public', 'private', 'archived']
