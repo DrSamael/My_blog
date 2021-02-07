@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
 
   has_many :comments, -> { order "created_at ASC" }, dependent: :destroy
-  has_and_belongs_to_many :tags
+  has_and_belongs_to_many :tags#, -> { where description: 'Seattle!!!!!!!!!!' }
 
   validates :title, presence: {message: 'must be filled!'}, length: { minimum: 5 }
   validates :text, presence: true
@@ -22,7 +22,6 @@ class Article < ApplicationRecord
   #   p.validates :title, presence: true
   #   p.validates :text, length: { minimum: 10 }
   # end
-
 
 
   before_validation :ensure_text_has_a_value
