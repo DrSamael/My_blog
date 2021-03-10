@@ -11,6 +11,7 @@ class Comment < ApplicationRecord
   # validates :commenter, presence: true, confirmation: { case_sensitive: false }, length: { minimum: 3 }
   # validates :commenter, confirmation: true
   # validates :commenter_confirmation, presence: true
+  validates :commenter, presence: true
 
   after_destroy :log_destroy_action
 

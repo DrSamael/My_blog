@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get 'products' => 'products#index', as: 'products'
+
 end

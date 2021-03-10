@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.find(params[:id])
     @comment.destroy
     redirect_to article_path(@article)
+    # render file: "#{Rails.root}/public/404.html", layout: false
   end
 
   private
