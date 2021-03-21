@@ -1,4 +1,10 @@
 <h1>
   <%= t('.hello') %>
 </h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+<%#= link_to 'My Blog', controller: 'articles' %>
+<%= link_to 'My Blog', articles_path, class: "main_link", style: "display: block", alt: "Home" %>
+
+<%= audio_tag "Rammstein - Engel.mp3", controls: true, style: "display: block; margin: 20px 0" %>
+<%= image_tag "car.jpg", style: "display: block; margin-bottom: 20px", alt: "Car" %>
+<%= video_tag "video-online.com_.mp4", autoplay: false, controls: true, poster: "eye.JPG" %>
+
