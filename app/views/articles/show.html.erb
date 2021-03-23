@@ -8,16 +8,17 @@
   <%= @article.text %>
 </p>
 
-<!--<p>-->
+<!--<br>-->
 <!--  <strong>comments texts</strong>-->
   <%# @article.comments.each do |comment| %>
-    <%#= comment.body %>
+<!--    <%#= comment.body %> </br>-->
   <%# end %>
 <!--</p>-->
 
 <h2>Comments</h2>
 <%#= render @article.comments %>
-<%= render partial: 'comments/comment', layout: 'comments/box', locals: { articleeee: @article } %>
+<%= render partial: 'comments/comment', locals: { articleeee: @article } %>
+<%#= render partial: 'comments/comment', collection: @article.comments %>
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>

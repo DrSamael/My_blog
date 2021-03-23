@@ -1,18 +1,18 @@
 <%= form_for @article.comments.new , url: article_comments_path(@article, @article.comments.new) do |form| %>
 
-  <% if @article.comments.new.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.comments.new.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.comments.new.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%# if @article.comments.new.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2>-->
+<!--        <%#= pluralize(@article.comments.new.errors.count, "error") %> prohibited-->
+<!--        this article from being saved:-->
+<!--      </h2>-->
+<!--      <ul>-->
+        <%# @article.comments.new.errors.full_messages.each do |msg| %>
+<!--          <li><%#= msg %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
 
   <p>
     <%= form.label :commenter %><br>

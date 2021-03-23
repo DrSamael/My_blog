@@ -34,3 +34,6 @@
 
 <%#= link_to 'https://identity.itsite.bissoft.org', 'https://identity.itsite.bissoft.org' %>
 <%= link_to "Title page", root_path, class: "back_to_main" %>
+
+
+<%= render partial: 'article', collection: @articles, as: :item, locals: {title22: "Article"}  %>

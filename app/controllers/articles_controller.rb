@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  # layout :articles_layout, only: :show
+  # layout false
 
   # http_basic_authenticate_with name: "DrSamael", password: "1983777", except: [:index, :show]
 
@@ -7,6 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @articles = Article.all
     @article = Article.find(params[:id])
   end
 
@@ -46,6 +49,11 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def articles_layout
+    @article.comments.present? ? "layouts/has_comments" : "layouts/has_not_comments"
+  end
+
   def article_params
     params.require(:article).permit(:title, :text, :status, :published)
   end
