@@ -36,4 +36,29 @@
 <%= link_to "Title page", root_path, class: "back_to_main" %>
 
 
-<%= render partial: 'article', collection: @articles, as: :item, locals: {title22: "Article"}  %>
+<%= render partial: 'article', collection: @articles, as: :item, locals: {title22: "Article"},
+           spacer_template: 'separate_partial' %>
+
+<!--<p>-->
+  <%#= distance_of_time_in_words(Time.now, Time.now + 15.seconds, include_seconds: true) %>
+<!--</p>-->
+<!--<p>-->
+  <%#= time_ago_in_words(15.seconds.from_now) %>
+<!--</p>-->
+
+<%#= debug({ 'first' => 1, 'second' => 'two', 'third' => [1,2,3] }) %>
+
+<%#= javascript_tag "alert('All is good')" %>
+
+<%= number_to_currency(1234567890.50) %> <br>
+<%= number_to_human(22984) %> <br>
+<%= number_to_human_size(545454545) %> <br>
+<%= number_to_percentage(99, precision: 2) %> <br>
+<%= number_with_delimiter(111222333) %> <br>
+<%= number_with_precision(999.981, precision: 3) %> <br>
+
+<p>
+  <%= strip_links('<a href="https://rubyonrails.org">Ruby on Rails</a>')%> <br>
+  <%= strip_tags("Strip <i>these</i> tags!") %> <br>
+</p>
+
