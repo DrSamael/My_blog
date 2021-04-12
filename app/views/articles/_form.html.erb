@@ -26,6 +26,9 @@
     <%= form.label :published %><br>
     <%= form.check_box :published %>
   </p>
+<!--  <p>-->
+    <%#= form.collection_check_boxes :comment_ids, Comment.order(:id), :id, :commenter %>
+<!--  </p>-->
   <p>
     <%= form.submit %>
   </p>

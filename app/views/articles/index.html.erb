@@ -36,9 +36,6 @@
 <%= link_to "Title page", root_path, class: "back_to_main" %>
 
 
-<%= render partial: 'article', collection: @articles, as: :item, locals: {title22: "Article"},
-           spacer_template: 'separate_partial' %>
-
 <!--<p>-->
   <%#= distance_of_time_in_words(Time.now, Time.now + 15.seconds, include_seconds: true) %>
 <!--</p>-->
@@ -50,15 +47,69 @@
 
 <%#= javascript_tag "alert('All is good')" %>
 
-<%= number_to_currency(1234567890.50) %> <br>
-<%= number_to_human(22984) %> <br>
-<%= number_to_human_size(545454545) %> <br>
-<%= number_to_percentage(99, precision: 2) %> <br>
-<%= number_with_delimiter(111222333) %> <br>
-<%= number_with_precision(999.981, precision: 3) %> <br>
+<p>
+  <%= number_to_currency(1234567890.50) %> <br>
+  <%= number_to_human(22984) %> <br>
+  <%= number_to_human_size(545454545) %> <br>
+  <%= number_to_percentage(99, precision: 2) %> <br>
+  <%= number_with_delimiter(111222333) %> <br>
+  <%= number_with_precision(999.981, precision: 3) %> <br>
+</p>
 
 <p>
   <%= strip_links('<a href="https://rubyonrails.org">Ruby on Rails</a>')%> <br>
   <%= strip_tags("Strip <i>these</i> tags!") %> <br>
 </p>
+
+<nav class="menu_block">
+  <ul id="ddmenu">
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">О нас</a>
+      <ul>
+        <li><a href="#">Миссия</a></li>
+        <li><a href="#">Команда</a></li>
+        <li><a href="#">История</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Продукты</a>
+      <ul>
+        <li><a href="#">Логитипы</a></li>
+        <li><a href="#">Шаблоны</a></li>
+        <li><a href="#">Иконки</a></li>
+        <li><a href="#">Плагины jQuery</a></li>
+        <li><a href="#">маркетинг Internet</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Интернационализация</a>
+      <ul>
+        <li><a href="#">Китай</a></li>
+        <li>
+          <%= link_to 'Япония', 'https://en.wikipedia.org/wiki/Japan' %>
+        </li>
+        <li><a href="#">Канада</a></li>
+        <li><a href="#">Автсралия</a></li>
+        <li><a href="#">Южная Америка</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Контакт</a></li>
+  </ul>
+</nav>
+
+<div class="navigation_button" style="display: inline-block">
+  Выпадашка
+  <div class="hidden_menu">
+    <p>
+      Меню dddddddddddddddddddddddddddddddddddddddddddd
+    </p>
+    <p>
+      <%= link_to 'Япония', 'https://en.wikipedia.org/wiki/Japan' %>
+    </p>
+    <p>
+      Меню
+    </p>
+  </div>
+</div>
+
+<%= render partial: 'article', collection: @articles, as: :item, locals: {title22: "Article"},
+           spacer_template: 'separate_partial' %>
 

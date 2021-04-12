@@ -10,9 +10,10 @@ class ArticlesController < ApplicationController
 
   def show
     @articles = Article.all
-    @article = Article.find(params[:id])
+    @article = @articles.find_by(id: params[:id])
+    @comment = @article.comments.new if @article.present?
   end
-
+  @article
   def new
     @article = Article.new
   end
