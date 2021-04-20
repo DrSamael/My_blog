@@ -30,6 +30,19 @@
     <%#= form.collection_check_boxes :comment_ids, Comment.order(:id), :id, :commenter %>
 <!--  </p>-->
   <p>
+    <%= form.fields_for :comments do |comment_form| %>
+      <%= comment_form.label :commenter %>
+      <%= comment_form.text_field :commenter %>
+
+      <%= comment_form.label :body %>
+      <%= comment_form.text_field :body %>
+
+      <%= comment_form.label :_destroy, 'удалить коммент нахуй' %>
+      <%= comment_form.check_box :_destroy %>
+    <% end %>
+  </p>
+
+  <p>
     <%= form.submit %>
   </p>
 

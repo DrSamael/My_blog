@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
   # layout :articles_layout, only: :show
   # layout false
 
@@ -13,9 +18,10 @@ class ArticlesController < ApplicationController
     @article = @articles.find_by(id: params[:id])
     @comment = @article.comments.new if @article.present?
   end
-  @article
+
   def new
     @article = Article.new
+    @article.comments.build
   end
 
   def edit
@@ -56,7 +62,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :status, :published)
+    params.require(:article).permit(:title, :text, :status, :published, comments_attributes: [:id, :commenter, :body, :_destroy])
   end
 
 end
