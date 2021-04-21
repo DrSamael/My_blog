@@ -33,8 +33,12 @@
 </table>
 
 <%#= link_to 'https://identity.itsite.bissoft.org', 'https://identity.itsite.bissoft.org' %>
-<%= link_to "Title page", root_path, class: "back_to_main" %>
-
+<p>
+  session - <%= session[:article_title] %>
+</p>
+<p>
+  <%= link_to "Title page", root_path, class: "back_to_main" %>
+</p>
 
 <!--<p>-->
   <%#= distance_of_time_in_words(Time.now, Time.now + 15.seconds, include_seconds: true) %>

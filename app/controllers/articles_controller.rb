@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    session[:article_title] = @article.title
 
     if @article.save
       redirect_to @article
@@ -42,7 +43,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
-      redirect_to @article
+      redirect_to @article, notice: 'UPDATED'
     else
       render 'edit'
     end
@@ -51,6 +52,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
+    flash[:notice] = "DESTROYED"
 
     redirect_to articles_path
   end
