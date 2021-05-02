@@ -34,7 +34,8 @@
 
 <%#= link_to 'https://identity.itsite.bissoft.org', 'https://identity.itsite.bissoft.org' %>
 <p>
-  session - <%= session[:article_title] %>
+  session: <%= session[:article_title] %> <br>
+  cookies: <%= cookies[:article_text] %>
 </p>
 <p>
   <%= link_to "Title page", root_path, class: "back_to_main" %>

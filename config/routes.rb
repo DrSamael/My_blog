@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  resources :products
 
-  get 'products' => 'products#index', as: 'products'
+  get 'products/download_pdf/:id', to: 'products#download_pdf', as: 'download_pdf'
+
+  # get 'products' => 'products#index', as: 'products'
 
 end

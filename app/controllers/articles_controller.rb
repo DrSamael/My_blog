@@ -7,7 +7,14 @@ class ArticlesController < ApplicationController
   # layout :articles_layout, only: :show
   # layout false
 
-  # http_basic_authenticate_with name: "DrSamael", password: "1983777", except: [:index, :show]
+  # http_basic_authenticate_with name: "DrSamael", password: "DrSamael1983777", except: [:index, :show]
+
+  # USERS = { "DrSamael" => "DrSamael1983777" }
+  # before_action :authenticate
+
+  # TOKEN = "secret"
+  # before_action :authenticate_with_token, only: [:create]
+
 
   def index
     @articles = Article.all
@@ -31,10 +38,12 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     session[:article_title] = @article.title
+    cookies[:article_text] = @article.text
 
     if @article.save
       redirect_to @article
     else
+      flash.now[:alert] = 'something was wrong!!!'
       render 'new'
     end
   end
@@ -65,6 +74,18 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :text, :status, :published, comments_attributes: [:id, :commenter, :body, :_destroy])
+  end
+
+  def authenticate
+    authenticate_or_request_with_http_digest do |username|
+      USERS[username]
+    end
+  end
+
+  def authenticate_with_token
+    authenticate_or_request_with_http_token do |token, options|
+      ActiveSupport::SecurityUtils.secure_compare(token, TOKEN)
+    end
   end
 
 end

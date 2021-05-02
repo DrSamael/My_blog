@@ -3,6 +3,7 @@
 <%= form_with model: @comment.new_record? ? [ @article, @article.comments.new ] : [@article, @comment] do |form| %>
 
   <%# if @article.comments.new.errors.any? %>
+<!--    p "@@@@@@@#########@@@@@@@@@@#############"-->
 <!--    <div id="error_explanation">-->
 <!--      <h2>-->
 <!--        <%#= pluralize(@article.comments.new.errors.count, "error") %> prohibited-->
