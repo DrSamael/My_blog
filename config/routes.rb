@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  # get "/articles", to: "articles#index"
-  #
   root 'welcome#index'
-  get 'welcome/index'
+  # get 'welcome/index'
 
   resources :articles do
     resources :comments
@@ -11,7 +9,6 @@ Rails.application.routes.draw do
   resources :products
 
   get 'products/download_pdf/:id', to: 'products#download_pdf', as: 'download_pdf'
-
-  # get 'products' => 'products#index', as: 'products'
+  get 'streaming', to: 'products#stream', as: 'stream'
 
 end

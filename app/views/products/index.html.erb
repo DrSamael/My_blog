@@ -26,3 +26,8 @@
 <p>
   <%= link_to "Title page", root_path, class: "back_to_main" %>
 </p>
+
+<%= form_tag stream_path, :method => 'get' do %>
+  <%= text_field_tag :message, params[:message] %>
+  <%= submit_tag "Post Stream Message" %>
+<% end %>

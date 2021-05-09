@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   require "prawn"
+  include ActionController::Live
 
   def index
     @products = Product.all
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find_by(id: params[:id])
     if @product.update(product_params)
-      redirect_to @product
+      redirect_to product_path(@product)
     else
       render 'edit'
     end
@@ -46,6 +47,15 @@ class ProductsController < ApplicationController
     send_data generate_pdf(product),
               filename: "#{product.name}.pdf",
               type: "application/pdf"
+  end
+
+  def stream
+    response.headers['Content-Type'] = 'text/event-stream'
+    10.times {
+      response.stream.write "#{params[:message]}\n"
+      sleep 1
+    }
+    response.stream.close
   end
 
   private

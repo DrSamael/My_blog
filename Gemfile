@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails', '~> 4.4'
 gem 'jquery-ui-rails'
 gem 'country_select', '~> 5.0', '>= 5.0.1'
+gem 'prawn', '~> 2.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
