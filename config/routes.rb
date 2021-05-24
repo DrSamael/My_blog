@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  # get 'welcome/index'
 
   resources :articles do
     resources :comments
@@ -10,5 +9,10 @@ Rails.application.routes.draw do
 
   get 'products/download_pdf/:id', to: 'products#download_pdf', as: 'download_pdf'
   get 'streaming', to: 'products#stream', as: 'stream'
+
+  # resources :pictures
+
+  get 'pictures', to: 'pictures#index', defaults: { default_parameter: 'default_val' }
+  get 'picture/:id', to: 'pictures#show', as: 'picture'
 
 end

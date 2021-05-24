@@ -1,0 +1,14 @@
+<h1>
+  Pictures
+</h1>
+
+<% @pictures.each do |picture| %>
+  <p>
+    <%= picture.name %> </br>
+    <%= link_to 'Show', picture_path(picture) %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to "To Main", _back_url %>
+</p>
