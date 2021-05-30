@@ -14,5 +14,10 @@ Rails.application.routes.draw do
 
   get 'pictures', to: 'pictures#index', defaults: { default_parameter: 'default_val' }
   get 'picture/:id', to: 'pictures#show', as: 'picture'
+  # get 'picture/:id', to: redirect('articles/%{id}'), as: 'picture'
+
+  direct :homepage do
+    "http://www.rubyonrails.org"
+  end
 
 end
