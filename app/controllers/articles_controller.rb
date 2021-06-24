@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
   # TOKEN = "secret"
   # before_action :authenticate_with_token, only: [:create]
 
-
   def index
     @articles = Article.all
   end
