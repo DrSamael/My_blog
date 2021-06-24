@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_122858) do
+ActiveRecord::Schema.define(version: 2021_06_23_112912) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_122858) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
     t.boolean "published", default: true
+    t.boolean "mixed"
   end
 
   create_table "articles_tags", id: false, force: :cascade do |t|
