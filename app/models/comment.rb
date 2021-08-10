@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
 
   belongs_to :article
 
+  delegate :title, to: :article
+
   scope :gavno_name, -> { where(commenter: "gavno") }
   scope :gavno_name_and_777, -> { gavno_name.where("body = 777") }
   scope :recent, -> { where('created_at >= ?', Date.current.year - 50 )}
