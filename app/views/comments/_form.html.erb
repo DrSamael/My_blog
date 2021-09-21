@@ -39,6 +39,11 @@
     <%= form.text_area :body %>
   </p>
   <p>
+    Статус комментария
+<!--    <%#= form.label :status %><br>-->
+    <%= form.select :status, ['public', 'private', 'archived'], selected: @comment.status %>
+  </p>
+  <p>
     <%= form.submit %>
   </p>
 <% end %>

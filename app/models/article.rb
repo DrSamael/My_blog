@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
 
+  include Visible
   alias_attribute :nazvanie, :title
 
   has_many :comments, -> { order "commenter ASC" }, dependent: :destroy, inverse_of: :article

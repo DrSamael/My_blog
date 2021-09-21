@@ -49,8 +49,6 @@ class Item
     type_tax + cost_tax
   end
 
-
-
 end
 
 
