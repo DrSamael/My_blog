@@ -27,6 +27,7 @@ gem 'country_select', '~> 5.0', '>= 5.0.1'
 gem 'prawn', '~> 2.4'
 # gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

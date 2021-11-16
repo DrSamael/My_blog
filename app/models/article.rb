@@ -26,11 +26,11 @@ class Article < ApplicationRecord
   #   p.validates :title, presence: true
   #   p.validates :text, length: { minimum: 10 }
   # end
-
+  has_rich_text :text
 
   before_validation :ensure_text_has_a_value
   before_validation :normalize_title, on: :create
-  after_validation :normalize_text, on: [ :create, :update ]
+  # after_validation :normalize_text, on: [ :create, :update ]
   before_destroy :puts_FFF_in_logs
 
 
