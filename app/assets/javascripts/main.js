@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log('HI');
+    console.log('HI!!!');
 
     $('#ddmenu > li > a').on('click', function(e){
         e.preventDefault();
@@ -20,5 +20,7 @@ $(document).ready(function () {
     // $("body").click(function(){
     //     $('.hidden_menu').hide(100);
     // });
+
+    $('.slick').slick();
 })
 
