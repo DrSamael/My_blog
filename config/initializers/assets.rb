@@ -15,3 +15,4 @@ Rails.application.config.assets.precompile += %w( admin.js admin.css )
 # Rails.application.config.assets.precompile += %w[admin_menu_form.js]
 # Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 
+# Rails.application.config.assets.precompile += %w[ckeditor/config.js]

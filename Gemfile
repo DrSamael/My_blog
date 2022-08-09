@@ -25,6 +25,12 @@ gem 'jquery-rails', '~> 4.4'
 gem 'jquery-ui-rails'
 gem 'country_select', '~> 5.0', '>= 5.0.1'
 gem 'prawn', '~> 2.4'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'activeadmin'
+gem 'devise'
+gem 'sidekiq'
 # gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 
 
