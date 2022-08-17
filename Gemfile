@@ -31,6 +31,8 @@ gem 'mini_magick'
 gem 'activeadmin'
 gem 'devise'
 gem 'sidekiq'
+gem 'paranoia'
+gem 'arctic_admin'
 # gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 
 
@@ -43,6 +45,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'better_errors'
+  gem "binding_of_caller"
 end
 
 group :development do

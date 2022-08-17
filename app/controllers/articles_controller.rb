@@ -16,6 +16,12 @@ class ArticlesController < ApplicationController
   # before_action :authenticate_with_token, only: [:create]
 
   def index
+    logger.info 'test test test !!!'
+    logger_n = Logger.new("log/test_test.log")
+    logger_n.warn "----------------!!!!!!!!!!!-----------------"
+    logger_n.error "----------------!!!!!!!!!!!-----------------"
+    logger_n.fatal "----------------!!!!!!!!!!!-----------------"
+
     @articles = Article.all
   end
 

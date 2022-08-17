@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_04_120106) do
+ActiveRecord::Schema.define(version: 2022_08_14_142446) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2022_08_04_120106) do
     t.string "status"
     t.boolean "published", default: true
     t.boolean "mixed"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_articles_on_deleted_at"
   end
 
   create_table "articles_tags", id: false, force: :cascade do |t|

@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
 
+  acts_as_paranoid
   include Visible
   alias_attribute :nazvanie, :title
 
@@ -7,7 +8,7 @@ class Article < ApplicationRecord
   has_and_belongs_to_many :tags#, -> { where description: 'Seattle!!!!!!!!!!' }
   accepts_nested_attributes_for :comments, allow_destroy: true, reject_if: :all_blank
 
-  validates :title, presence: {message: 'must be filled!'}, length: { minimum: 5 }
+  validates :title, presence: { message: 'must be filled!' }, length: { minimum: 5 }
   validates :text, presence: true
   validates :published, acceptance: true
   # validates :text, exclusion: { in: %w(www us ca jp), message: "%{value} is reserved." }
@@ -33,6 +34,8 @@ class Article < ApplicationRecord
   # after_validation :normalize_text, on: [ :create, :update ]
   before_destroy :puts_FFF_in_logs
 
+  scope :status_public, -> { where(status: 'public') }
+  scope :recent, -> (time){ where("created_at > ?", time) }
 
   private
 

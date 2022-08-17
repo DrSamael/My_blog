@@ -13,6 +13,6 @@
 
  *= require main
  *= require actiontext
- *= require_tree .
+
  *= require_self
  */
