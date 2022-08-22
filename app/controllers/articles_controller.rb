@@ -88,7 +88,7 @@ class ArticlesController < ApplicationController
   end
 
   def authenticate_with_token
-    authenticate_or_request_with_http_token do |token, options|
+    authenticate_or_request_with_http_token do |token, _options|
       ActiveSupport::SecurityUtils.secure_compare(token, TOKEN)
     end
   end
