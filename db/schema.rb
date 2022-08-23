@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_14_142446) do
+ActiveRecord::Schema.define(version: 2022_08_22_195452) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -128,6 +128,11 @@ ActiveRecord::Schema.define(version: 2022_08_14_142446) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+  end
+
+  create_table "new_bad_models", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "people", force: :cascade do |t|

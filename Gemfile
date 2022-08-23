@@ -33,7 +33,6 @@ gem 'devise'
 gem 'sidekiq'
 gem 'paranoia'
 gem 'arctic_admin'
-# gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 
 
 # Use Active Storage variant
@@ -47,6 +46,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'better_errors'
   gem "binding_of_caller"
+  gem 'rubocop'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -61,6 +62,9 @@ group :development do
 end
 
 group :test do
+  gem 'simplecov', require: false
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
