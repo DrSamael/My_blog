@@ -3,7 +3,11 @@
 one:
   title: MyString
   text: MyText
+  published: true
+  status: public
 
 two:
   title: MyString
   text: MyText
+  published: true
+  status: public
