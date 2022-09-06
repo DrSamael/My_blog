@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   include Visible
   alias_attribute :nazvanie, :title
 
+  has_one_attached :document
+
   has_many :comments, -> { order "commenter ASC" }, dependent: :destroy, inverse_of: :article
   has_and_belongs_to_many :tags#, -> { where description: 'Seattle!!!!!!!!!!' }
   accepts_nested_attributes_for :comments, allow_destroy: true, reject_if: :all_blank

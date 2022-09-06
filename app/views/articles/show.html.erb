@@ -3,11 +3,20 @@
     <strong>Title:</strong>
     <%= @article.title %>
   </p>
-
   <p>
     <strong>Text:</strong>
     <%= @article.text %>
   </p>
+  <p>
+    <strong>Status:</strong>
+    <%= @article.status %>
+  </p>
+  <p>
+    <strong>Published:</strong>
+    <%= @article.published %>
+  </p>
+  <%= link_to 'download attached document',
+              rails_blob_path(@article.document, disposition: 'attachment') if @article.document.attached? %>
 
   <!--<br>-->
   <!--  <strong>comments texts</strong>-->

@@ -78,7 +78,8 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :status, :published, comments_attributes: [:id, :commenter, :body, :_destroy])
+    params.require(:article).permit(:title, :text, :status, :published, :document,
+                                    comments_attributes: [:id, :commenter, :body, :_destroy])
   end
 
   def authenticate

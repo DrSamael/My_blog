@@ -29,7 +29,17 @@
   </p>
   <p>
     <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: @article.status %>
+    <%= form.select :status, %w[public private archived], selected: @article.status %>
+  </p>
+  <p>
+    Article has document? -
+    <%= @article.document.attached? %>
+  <br>
+    document:
+    <%= link_to 'download', rails_blob_path(@article.document, disposition: 'attachment') if @article.document.attached? %>
+  </p>
+  <p>
+    <%= form.file_field :document %>
   </p>
 <!--  <p>-->
     <%#= form.collection_check_boxes :comment_ids, Comment.order(:id), :id, :commenter %>

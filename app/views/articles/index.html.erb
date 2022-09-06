@@ -16,6 +16,7 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Document</th>
     <th></th>
   </tr>
 
@@ -23,6 +24,7 @@
       <tr class="<%= article.archived? ? 'archived' : '' %>" >
         <td><%= article.title.html_safe %></td>
         <td><%= article.text&.html_safe %></td>
+        <td><%= image_tag article.document, style: "width: 100px" if article.document.attached? %></td>
         <td><%= link_to 'Show', article_path(article) %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article_path(article),
