@@ -1,0 +1,9 @@
+<h3>Top 5 posts</h3>
+
+<ol>
+  <% @top_five.each do |pub_post| %>
+    <li>
+      <%= pub_post.created_at.strftime('%T') %> | <%= link_to pub_post.post.name, pub_post.post %>
+    </li>
+  <% end %>
+</ol>

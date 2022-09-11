@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'redirect/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   mount Ckeditor::Engine => '/ckeditor'
-  root 'welcome#index'
+
 
   resources :articles do
     resources :comments
   end
-  resources :products
+
+  scope '(/newnewnew)' do
+    root 'welcome#index'
+    resources :products
+  end
+  resources :posts
+
 
   get 'products/download_pdf/:id', to: 'products#download_pdf', as: 'download_pdf'
   get 'streaming', to: 'products#stream', as: 'stream'
@@ -23,4 +30,5 @@ Rails.application.routes.draw do
     "http://www.rubyonrails.org"
   end
 
+  get '/redirect/:url', to: 'redirect#show', as: 'redirect', constraints: { url: /[\w%\.\/\:]+/ }
 end

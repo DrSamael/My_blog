@@ -1,0 +1,11 @@
+<% if @post.present? %>
+  <p id='content'>
+<!--    <strong>Title:</strong>-->
+    <%= @post.name %>
+  </p>
+  <%= button_to "Back to posts", posts_path, method: :get %>
+<% else %>
+  <h1>
+    всему пизда
+  </h1>
+<% end %>

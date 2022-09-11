@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_22_195452) do
+ActiveRecord::Schema.define(version: 2022_09_06_194248) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -152,6 +152,12 @@ ActiveRecord::Schema.define(version: 2022_08_22_195452) do
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -160,6 +166,14 @@ ActiveRecord::Schema.define(version: 2022_08_22_195452) do
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "price"
     t.integer "status"
+  end
+
+  create_table "published_posts", force: :cascade do |t|
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_published_posts_on_created_at"
+    t.index ["post_id"], name: "index_published_posts_on_post_id"
   end
 
   create_table "regions", force: :cascade do |t|
