@@ -1,0 +1,33 @@
+<%= form_for @post, local: true do |form| %>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+
+  <p>
+    <%= link_to "Post page", posts_path, class: "back_to_main" %>
+  </p>
+
+<% end %>

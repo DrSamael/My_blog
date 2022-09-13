@@ -33,6 +33,7 @@ gem 'devise'
 gem 'sidekiq'
 gem 'paranoia'
 gem 'arctic_admin'
+gem 'reform'
 
 
 # Use Active Storage variant

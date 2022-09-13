@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :products
   end
   resources :posts
+  resources :content_plans, only: [:index, :new, :create] do
+    get '/add_title', to: 'content_plans#add_title', on: :collection
+  end
 
 
   get 'products/download_pdf/:id', to: 'products#download_pdf', as: 'download_pdf'

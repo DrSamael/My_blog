@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     @post = @post = Post.new
   end
 
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -26,6 +30,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = Post.find_by(id: params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post, notice: 'UPDATED'
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
@@ -36,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name)
+    params.require(:post).permit(:name, :title)
   end
 
 end

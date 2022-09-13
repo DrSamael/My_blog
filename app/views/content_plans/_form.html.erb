@@ -1,0 +1,9 @@
+<%= form_for :content_plans, url: content_plans_path, method: :post do |form| %>
+  <p>
+    <%= link_to 'add one more title', add_title_content_plans_path %>
+  </p>
+  <div id='post_titles'>
+    <%= render 'add_title' %>
+    <%= form.submit %>
+  </div>
+<% end %>

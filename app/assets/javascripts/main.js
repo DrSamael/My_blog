@@ -22,5 +22,12 @@ $(document).ready(function () {
     // });
 
     $('.slick').slick();
+
+    $('#add_title').on('ajax:success', function(event){
+        [data, status, xhr] = event.detail;
+        $('#post_titles').append(xhr.responseText);
+    }).on('ajax:error', function(){
+        console.log(this);
+    });
 })
 
