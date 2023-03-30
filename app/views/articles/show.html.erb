@@ -15,6 +15,9 @@
     <strong>Published:</strong>
     <%= @article.published %>
   </p>
+  <p>
+    <%= image_tag @article.document if @article.document.attached? %>
+  </p>
   <%= link_to 'download attached document',
               rails_blob_path(@article.document, disposition: 'attachment') if @article.document.attached? %>
 
