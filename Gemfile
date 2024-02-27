@@ -36,6 +36,9 @@ gem 'sidekiq'
 gem 'paranoia'
 gem 'arctic_admin'
 gem 'reform'
+# gem 'bundler', '~> 2.4.22'
+gem 'figaro'
+gem 'madison'
 
 
 # Use Active Storage variant
