@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.7'
+ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
@@ -32,7 +32,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'activeadmin'
 gem 'devise'
-gem 'sidekiq'
+gem 'sidekiq', '~> 6.5', '>= 6.5.4'
 gem 'paranoia'
 gem 'arctic_admin'
 gem 'reform'
