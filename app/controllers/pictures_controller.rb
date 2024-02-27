@@ -7,6 +7,7 @@ class PicturesController < ApplicationController
   def show
     @picture = Picture.find(params[:id])
     # @picture = Picture.find(params[:other].split('/')[1])
+    @page = define_page
   end
 
   def new
@@ -39,6 +40,17 @@ class PicturesController < ApplicationController
   end
 
   private
+
+  def define_page
+    Region.establish_connection(:first_app_db)
+    # Perform your query using FirstAppModel
+    results = Region.first
+
+    # Reset the connection to the default
+    Region.establish_connection(:default)
+
+    results
+  end
 
   def picture_params
     params.require(:picture).permit(:name, :image, :imageable_type, :imageable_id, :lock_version)
