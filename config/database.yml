@@ -23,3 +23,15 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+
+first_app_db:
+  <<: *default
+  database: auto_catalog
+  user: postgres
+  password: postgres
+  adapter: postgresql
+  pool: 5
+  encoding: utf8
+  timeout: 5000
+  host: localhost

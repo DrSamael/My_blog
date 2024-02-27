@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_202446) do
+ActiveRecord::Schema.define(version: 2023_06_25_162951) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -131,6 +131,18 @@ ActiveRecord::Schema.define(version: 2022_09_13_202446) do
   end
 
   create_table "new_bad_models", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.text "name"
+    t.text "url"
+    t.text "content_part"
+    t.text "title"
+    t.text "keywords"
+    t.text "description"
+    t.boolean "published"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
