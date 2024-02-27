@@ -1,0 +1,30 @@
+name: Send Letter
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+
+jobs:
+  send-letter:
+    runs-on: ubuntu-latest
+    env:
+      EMAIL_USER: ${{ secrets.EMAIL_USER }}
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7.7'
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+
+      - name: Run send_letter.rb
+        run: |
+          bundle exec ruby send_letter.rb
