@@ -7,6 +7,8 @@ on:
 jobs:
   send-letter:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_slug }}
     env:
       EMAIL_USER: ${{ secrets.EMAIL_USER }}
       EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
