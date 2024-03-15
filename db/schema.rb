@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_25_162951) do
+ActiveRecord::Schema.define(version: 2024_03_15_090530) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -197,6 +197,21 @@ ActiveRecord::Schema.define(version: 2023_06_25_162951) do
     t.string "abbr", limit: 255
   end
 
+  create_table "role_admins", force: :cascade do |t|
+    t.integer "role_id", null: false
+    t.integer "admin_user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_user_id"], name: "index_role_admins_on_admin_user_id"
+    t.index ["role_id"], name: "index_role_admins_on_role_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -216,4 +231,6 @@ ActiveRecord::Schema.define(version: 2023_06_25_162951) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "articles"
+  add_foreign_key "role_admins", "admin_users"
+  add_foreign_key "role_admins", "roles"
 end
