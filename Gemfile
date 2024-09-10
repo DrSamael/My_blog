@@ -71,7 +71,7 @@ end
 
 group :test do
   gem 'simplecov', require: false
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
