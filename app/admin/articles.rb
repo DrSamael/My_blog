@@ -1,5 +1,4 @@
 ActiveAdmin.register Article do
-
   permit_params :title, :text, :status, :published, :mixed
 
   show do
@@ -34,5 +33,4 @@ ActiveAdmin.register Article do
     end
     f.actions
   end
-
 end

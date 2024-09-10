@@ -58,6 +58,4 @@ class Article < ApplicationRecord
   def normalize_text
     self.text = text.downcase.titleize
   end
-
-
 end
