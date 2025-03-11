@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.1'
+ruby '3.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1', '>= 6.1.7.8'
@@ -45,7 +45,9 @@ gem 'madison'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '~> 1.18', '>= 1.18.4'#, require: false
+gem 'matrix'
+gem 'psych', '< 4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
